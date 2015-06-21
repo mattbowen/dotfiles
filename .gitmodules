@@ -1,0 +1,9 @@
+[submodule "home/.local/zgen"]
+	path = home/.local/zgen
+	url = https://github.com/tarjoilija/zgen.git
+[submodule "home/.vim"]
+	path = home/.vim
+	url = git@github.com:mattbowen/dotvim.git
+[submodule "home/.local/fonts"]
+	path = home/.local/fonts
+	url = git@github.com:powerline/fonts.git
