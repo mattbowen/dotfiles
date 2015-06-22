@@ -3,8 +3,7 @@ source "${HOME}/.local/zgen/zgen.zsh"
 function install-default-zgen() {
     zgen oh-my-zsh
 
-    # plugins
-    zgen load sharat87/zsh-vim-mode
+   # plugins
     zgen oh-my-zsh plugins/gitfast
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
@@ -39,20 +38,18 @@ function install-default-zgen() {
     zgen load caarlos0/zsh-add-upstream
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load tarruda/zsh-autosuggestions
-    # completions
-    zgen load zsh-users/zsh-completions src
 
     # theme
     zgen oh-my-zsh themes/tonotdo
 
- 
+    # completions
+    zgen load zsh-users/zsh-completions src
+
 }
 
 function ,zgen-update() {
     echo "Overwriting zgen save"
-    zgen reset
-    install-default-zgen
-    zgen save
+    zgen reset && source ~/.zshrc
 }
 
 if ! zgen saved; then
@@ -66,19 +63,20 @@ if [ -n zce ]; then
     bindkey "^Xz" zce
 fi
 
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-    PROMPT_TIME="[%D{%K:%M:%S}]"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$PROMPT_TIME"
-    zle reset-prompt
-}
-
+bindkey -v
 bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-word
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+    PROMPT_TIME="[%D{%K:%M:%S}]"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$PROMPT_TIME"
+    zle reset-prompt
+}
 
 zle -N zle-line-init
 zle -N zle-keymap-select
