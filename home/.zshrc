@@ -1,5 +1,11 @@
 source "${HOME}/.local/zgen/zgen.zsh"
 
+if [[ -f "${HOME}/.zshrc.pre.local" ]]; then
+    source "${HOME}/.zshrc.pre.local"
+else
+    export CMDLEADER='' # Necessary for customizations
+fi
+
 function install-default-zgen() {
     zgen oh-my-zsh
 
