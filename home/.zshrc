@@ -63,9 +63,10 @@ if ! zgen saved; then
 fi
 
 # Auto-load topics
-for topic in .zsh/*(/); do
+for topic in ~/.zsh/*(/); do
+    local topicname=${topic:t}
     # Source any alises
-    if [[ -f "${topic}/aliases.zsh" ]]; then
+    if [[ -e "${topic}/aliases.zsh" ]]; then
         source "${topic}/aliases.zsh"
     fi
     # Find and source any functions
@@ -75,8 +76,8 @@ for topic in .zsh/*(/); do
             source $functionfile
         done
     fi
-    if [[ -d "${topic}/${topic}.zsh" ]]; then
-        source ${topic}/${topic}.zsh
+    if [[ -e "${topic}/${topicname}.zsh" ]]; then
+        source ${topic}/${topicname}.zsh
     fi
 done
 
