@@ -42,7 +42,6 @@ function install-default-zgen() {
     zgen load marzocchi/zsh-notify
     zgen load ascii-soup/zsh-url-highlighter
     zgen load caarlos0/zsh-add-upstream
-    zgen load zsh-users/zsh-syntax-highlighting
     zgen load tarruda/zsh-autosuggestions
 
     # theme
@@ -90,6 +89,8 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-word
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
