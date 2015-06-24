@@ -30,6 +30,7 @@ function install-default-zgen() {
     zgen oh-my-zsh plugins/virtualenvwrapper
     zgen oh-my-zsh plugins/tmuxinator
     zgen oh-my-zsh plugins/aws
+    zgen oh-my-zsh plugins/vagrant
 
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load unixorn/autoupdate-zgen
