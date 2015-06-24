@@ -81,6 +81,12 @@ for topic in ~/.zsh/*(/); do
     fi
 done
 
+# My personal, basic defaults
+export EDITOR=vim
+export SHELL=zsh
+
+# Overrides for anything defined in topics or above goes in
+# ~/.zshrc.local
 if [[ -f "${HOME}/.zshrc.local" ]]; then
     source "${HOME}/.zshrc.local"
 fi
