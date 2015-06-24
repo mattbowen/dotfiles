@@ -82,6 +82,7 @@ for topic in ~/.zsh/*(/); do
 done
 
 # My personal, basic defaults
+export ZDOTDIR=$HOME
 export EDITOR=vim
 export SHELL=zsh
 
