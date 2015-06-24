@@ -73,33 +73,10 @@ for topic in .zsh/*(/); do
             . $functionfile
         done
     fi
+    if [[ -d "${topic}/${topic}.zsh" ]]; then
+        . ${topic}/${topic}.zsh
+    fi
 done
-
-# Key bindings
-if [ -n zce ]; then
-    bindkey "^Xz" zce
-fi
-
-bindkey -v
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-word
-bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-    PROMPT_TIME="[%D{%K:%M:%S}]"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$PROMPT_TIME"
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-export KEYTIMEOUT=1
 
 if [[ -f "${HOME}/.zshrc.local" ]]; then
     source "${HOME}/.zshrc.local"
