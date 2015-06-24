@@ -65,16 +65,18 @@ fi
 # Auto-load topics
 for topic in .zsh/*(/); do
     # Source any alises
-    . "${topic}/alises.sh"
+    if [[ -f "${topic}/aliases.zsh" ]]; then
+        source "${topic}/aliases.zsh"
+    fi
     # Find and source any functions
     if [[ -d "${topic}/functions" ]]; then
         fpath=("${topic}/functions" $fpath)
         for functionfile in ${topic}/functions/**/*.zsh; do
-            . $functionfile
+            source $functionfile
         done
     fi
     if [[ -d "${topic}/${topic}.zsh" ]]; then
-        . ${topic}/${topic}.zsh
+        source ${topic}/${topic}.zsh
     fi
 done
 
