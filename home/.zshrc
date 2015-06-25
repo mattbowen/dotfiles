@@ -16,15 +16,12 @@ function install-default-zgen() {
     zgen oh-my-zsh plugins/pip
     zgen oh-my-zsh plugins/sublime
     zgen oh-my-zsh plugins/fabric
-    zgen oh-my-zsh plugins/fabric
     zgen oh-my-zsh plugins/brew
     zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/httpie
     zgen oh-my-zsh plugins/tmux
-    zgen oh-my-zsh plugins/tmux
     zgen oh-my-zsh plugins/history
     zgen oh-my-zsh plugins/bower
-    zgen oh-my-zsh plugins/celery
     zgen oh-my-zsh plugins/celery
     zgen oh-my-zsh plugins/osx
     zgen oh-my-zsh plugins/virtualenvwrapper
@@ -44,8 +41,8 @@ function install-default-zgen() {
     zgen load tarruda/zsh-autosuggestions
 
     # theme
-    zgen oh-my-zsh themes/tonotdo
-
+    #zgen oh-my-zsh themes/tonotdo
+    zgen oh-my-zsh themes/simple
     # completions
     zgen load zsh-users/zsh-completions src
 
