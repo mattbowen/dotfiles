@@ -1,5 +1,5 @@
 source "${HOME}/.local/zgen/zgen.zsh"
-export CMDLEADER='' # Necessary for customizations, override in .pre.local
+export CMDLEADER=',' # Necessary for customizations, override in .pre.local
 if [[ -f "${HOME}/.zshrc.pre.local" ]]; then
     source "${HOME}/.zshrc.pre.local"
 fi
