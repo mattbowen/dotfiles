@@ -1,5 +1,7 @@
 source "${HOME}/.local/zgen/zgen.zsh"
 export CMDLEADER=',' # Necessary for customizations, override in .pre.local
+export SOURCEDIR="${HOME}/source" # Necessary for other env vars. Override in .pre.local
+
 if [[ -f "${HOME}/.zshrc.pre.local" ]]; then
     source "${HOME}/.zshrc.pre.local"
 fi
@@ -41,8 +43,9 @@ function install-default-zgen() {
     zgen load tarruda/zsh-autosuggestions
 
     # theme
-    #zgen oh-my-zsh themes/tonotdo
-    zgen oh-my-zsh themes/simple
+    # zgen oh-my-zsh themes/tonotdo
+    # zgen oh-my-zsh themes/jnrowe
+    zgen oh-my-zsh themes/muse
     # completions
     zgen load zsh-users/zsh-completions src
 

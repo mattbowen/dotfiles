@@ -17,6 +17,7 @@ alias "${CMDLEADER}gco"='git checkout'
 alias "${CMDLEADER}gd"='git diff'
 alias "${CMDLEADER}ggpush"='git push origin $(current_branch)'
 alias "${CMDLEADER}gremoveuntracked"='rm -rf `git status --porcelain | sed -e -e"s/\?\? / /" | tr -d '\\n'`'
+alias "${CMDLEADER}gfetch"='git fetch'
 
 # Ones I use less frequently
 alias "${CMDLEADER}gcl"='git config --list'
