@@ -86,7 +86,7 @@ done
 export ZDOTDIR=$HOME
 export EDITOR=vim
 export SHELL=zsh
-
+export PATH=~/.bin:$PATH
 # Overrides for anything defined in topics or above goes in
 # ~/.zshrc.local
 if [[ -f "${HOME}/.zshrc.local" ]]; then
