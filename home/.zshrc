@@ -37,7 +37,6 @@ function install-default-zgen() {
     zgen load hchbaw/opp.zsh
     zgen load chrissicool/zsh-256color
     zgen load s7anley/zsh-geeknote
-    zgen load marzocchi/zsh-notify
     zgen load ascii-soup/zsh-url-highlighter
     zgen load caarlos0/zsh-add-upstream
     zgen load tarruda/zsh-autosuggestions
