@@ -32,18 +32,15 @@ function install-default-zgen() {
     zgen oh-my-zsh plugins/vagrant
 
     zgen load zsh-users/zsh-syntax-highlighting
-#    zgen load unixorn/autoupdate-zgen
+    zgen load unixorn/autoupdate-zgen
     zgen load sharat87/pip-app
     zgen load hchbaw/opp.zsh
     zgen load chrissicool/zsh-256color
     zgen load s7anley/zsh-geeknote
     zgen load ascii-soup/zsh-url-highlighter
     zgen load caarlos0/zsh-add-upstream
-    zgen load tarruda/zsh-autosuggestions
 
     # theme
-    # zgen oh-my-zsh themes/tonotdo
-    # zgen oh-my-zsh themes/jnrowe
     # zgen oh-my-zsh themes/muse
     zgen load nojhan/liquidprompt
     # completions
