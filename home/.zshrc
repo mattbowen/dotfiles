@@ -32,7 +32,7 @@ function install-default-zgen() {
     zgen oh-my-zsh plugins/vagrant
 
     zgen load zsh-users/zsh-syntax-highlighting
-    zgen load unixorn/autoupdate-zgen
+#    zgen load unixorn/autoupdate-zgen
     zgen load sharat87/pip-app
     zgen load hchbaw/opp.zsh
     zgen load chrissicool/zsh-256color
@@ -44,7 +44,8 @@ function install-default-zgen() {
     # theme
     # zgen oh-my-zsh themes/tonotdo
     # zgen oh-my-zsh themes/jnrowe
-    zgen oh-my-zsh themes/muse
+    # zgen oh-my-zsh themes/muse
+    zgen load nojhan/liquidprompt
     # completions
     zgen load zsh-users/zsh-completions src
 
@@ -57,7 +58,7 @@ function ,zgen-update() {
 
 if ! zgen saved; then
     echo "Creating a zgen save"
-   # save all to init script
+    # save all to init script
     install-default-zgen
     zgen save
 fi
