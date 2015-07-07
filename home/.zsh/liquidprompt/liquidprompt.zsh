@@ -101,7 +101,7 @@ export LP_ENABLE_TIME=0
 
 # Show runtime of the last command if over export LP_RUNTIME_THRESHOLD
 # Recommended value is 0
-export LP_ENABLE_RUNTIME=1
+export LP_ENABLE_RUNTIME=0
 
 # Minimal runtime to be displayed
 # Recommended value is 2
