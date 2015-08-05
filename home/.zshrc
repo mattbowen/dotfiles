@@ -25,8 +25,13 @@ function install-default-zgen() {
     zgen oh-my-zsh plugins/history
     zgen oh-my-zsh plugins/bower
     zgen oh-my-zsh plugins/celery
-    zgen oh-my-zsh plugins/osx
-    zgen oh-my-zsh plugins/virtualenvwrapper
+
+    if [[ `uname -s` == "Darwin" ]]; then
+        zgen oh-my-zsh plugins/osx
+    fi
+    if [[ -n $WORKON_HOME ]]; then 
+        zgen oh-my-zsh plugins/virtualenvwrapper
+    fi
     zgen oh-my-zsh plugins/tmuxinator
     zgen oh-my-zsh plugins/aws
     zgen oh-my-zsh plugins/vagrant
