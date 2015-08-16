@@ -25,6 +25,7 @@ function install-default-zgen() {
     zgen oh-my-zsh plugins/history
     zgen oh-my-zsh plugins/bower
     zgen oh-my-zsh plugins/celery
+    zgen oh-my-zsh plugins/golang
 
     if [[ `uname -s` == "Darwin" ]]; then
         zgen oh-my-zsh plugins/osx
