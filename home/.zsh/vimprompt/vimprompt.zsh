@@ -22,7 +22,9 @@ function zle-line-init zle-keymap-select {
     zle reset-prompt
 }
 
-zle -N zle-line-init
-zle -N zle-keymap-select
-export KEYTIMEOUT=1
+if [[ -z ${INSIDE_EMACS} ]]; then
+    zle -N zle-line-init
+    zle -N zle-keymap-select
+    export KEYTIMEOUT=1
+fi
 

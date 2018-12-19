@@ -12,20 +12,20 @@ function install-default-zgen() {
    # plugins
     zgen oh-my-zsh plugins/gitfast
     zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
+    /* zgen oh-my-zsh plugins/command-not-found */
     zgen oh-my-zsh plugins/git-extras
     zgen oh-my-zsh plugins/python
     zgen oh-my-zsh plugins/pip
-    zgen oh-my-zsh plugins/sublime
+    /* zgen oh-my-zsh plugins/sublime */
     zgen oh-my-zsh plugins/fabric
     zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/npm
+    /* zgen oh-my-zsh plugins/npm */
     zgen oh-my-zsh plugins/httpie
     zgen oh-my-zsh plugins/tmux
     zgen oh-my-zsh plugins/history
-    zgen oh-my-zsh plugins/bower
-    zgen oh-my-zsh plugins/celery
-    zgen oh-my-zsh plugins/golang
+    /* zgen oh-my-zsh plugins/bower */
+    /* zgen oh-my-zsh plugins/celery */
+    /* zgen oh-my-zsh plugins/golang */
 
     if [[ `uname -s` == "Darwin" ]]; then
         zgen oh-my-zsh plugins/osx
@@ -42,9 +42,10 @@ function install-default-zgen() {
     zgen load sharat87/pip-app
     zgen load hchbaw/opp.zsh
     zgen load chrissicool/zsh-256color
-    zgen load s7anley/zsh-geeknote
+    /* zgen load s7anley/zsh-geeknote */
     zgen load ascii-soup/zsh-url-highlighter
-    zgen load caarlos0/zsh-add-upstream
+    /* zgen load caarlos0/zsh-add-upstream */
+    /* zgen load marzocchi/zsh-notify */
 
     # theme
     # zgen oh-my-zsh themes/muse
@@ -87,11 +88,14 @@ done
 
 # My personal, basic defaults
 export ZDOTDIR=$HOME
-export EDITOR=vim
-export SHELL=zsh
+export EDITOR=/usr/local/Cellar/vim/8.0.1500/bin/vim
+export SHELL=/usr/local/bin/zsh
 export PATH=~/.bin:$PATH
 # Overrides for anything defined in topics or above goes in
 # ~/.zshrc.local
 if [[ -f "${HOME}/.zshrc.local" ]]; then
     source "${HOME}/.zshrc.local"
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/Users/matthew/bin/Sencha/Cmd:$PATH"
